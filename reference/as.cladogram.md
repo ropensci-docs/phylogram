@@ -1,0 +1,35 @@
+# Apply unweighted branch lengths.
+
+This function sets the 'height' attributes of all leaf nodes to zero and
+progressively resets the heights of the inner nodes by single
+incremental units in a bottom-up fashion.
+
+## Usage
+
+``` r
+as.cladogram(x)
+```
+
+## Arguments
+
+- x:
+
+  an object of class `"dendrogram"`.
+
+## Value
+
+an object of class `"dendrogram"`.
+
+## Author
+
+Shaun Wilkinson
+
+## Examples
+
+``` r
+  x <- read.dendrogram(text = "(A:0.1,B:0.2,(C:0.3,D:0.4):0.5);")
+  plot(x, horiz = TRUE)
+
+  x <- as.cladogram(x)
+  plot(x, horiz = TRUE)
+```
